@@ -1,0 +1,20 @@
+{
+  "name": "generator-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "generate-api": "openapi-generator-cli generate -i https://cloud.redhat.com/api/compliance/v2/openapi.json -g typescript-axios -o ./src/generated-client --additional-properties=useSingleRequestParameter=true --skip-validate-spec --enable-post-process-file"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.13.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1"
+  },
+  "dependencies": {
+    "axios": "^1.7.2"
+  }
+}
